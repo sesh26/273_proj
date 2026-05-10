@@ -38,8 +38,8 @@ module tb_top;
     assign dut_rst = ~dif.rst_n;
 
     // PCS_TX golden model
-    pcs_tx_dut_ref u_ref (
-    //pcs_tx u_ref (
+    //pcs_tx_dut_ref u_ref (    // THIS MODEL IS GM MODIFIED TO MATCH DUT
+    pcs_tx u_ref (              // THIS IS OUR GM
         .clk  (clk),
         .rst  (dut_rst),
         .Din  (dif.Din),
