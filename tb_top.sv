@@ -16,6 +16,8 @@ import uvm_pkg::*;
 `include "model/tx_sign_rev.sv"
 `include "model/pcs_tx.sv"
 
+`include "model/pcs_tx_dut_ref.sv"
+
 `include "seq_item.sv"
 `include "sequencer.sv"
 `include "sequence.sv"
@@ -36,7 +38,8 @@ module tb_top;
     assign dut_rst = ~dif.rst_n;
 
     // PCS_TX golden model
-    pcs_tx u_ref (
+    pcs_tx_dut_ref u_ref (
+    //pcs_tx u_ref (
         .clk  (clk),
         .rst  (dut_rst),
         .Din  (dif.Din),
