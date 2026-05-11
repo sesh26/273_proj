@@ -18,7 +18,7 @@ module tx_sign_rev (
     logic Srev_n;
 
     always_comb begin
-        Srev_n = tx_enable_n[2] ^ tx_enable_n[4];
+        Srev_n = tx_enable_n[2] | tx_enable_n[4];
 
         A_n = (Sg_n[0] ^ Srev_n) ? -TA_n : TA_n;
         B_n = (Sg_n[1] ^ Srev_n) ? -TB_n : TB_n;
